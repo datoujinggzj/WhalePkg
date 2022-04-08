@@ -6,7 +6,7 @@ Whale's playground 随便写写
 
 ## Package
 
-### 新冠数据报告&可视化
+### Covid-19 Report & Visualization
 
 
 
@@ -21,6 +21,10 @@ pip install my-covid-report==1.0
 随着奥密克戎的爆发，中国上海沦陷。
 
 此pkg根据JHU CSSE所提供的官方新冠数据对疫情情况生成数据报告并可视化。
+
+```diff
++ ⚠️需要翻墙⚠️
+```
 
 #### 模块
 
@@ -57,6 +61,10 @@ pip install my-covid-report==1.0
               kind = '确诊',           # 确诊 / 死亡 / 恢复，这取决于ts_data_processed使用的是什么类型的数据
               country = '中国')        # 中国 / 美国
 ```
+
+#### 实例
+
+代码片段：https://gist.github.com/datoujinggzj/377f08e96056ddec3333a74cba2467e2
 
 
 
