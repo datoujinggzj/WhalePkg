@@ -1,37 +1,59 @@
-# Whalekg
+# Whale-Pkg
 
-#### 介绍
-随便写写
+## 介绍
 
-#### 软件架构
-软件架构说明
+Whale's playground 随便写写
 
+## Package
 
-#### 安装教程
-
-1.  xxxx
-2.  xxxx
-3.  xxxx
-
-#### 使用说明
-
-1.  xxxx
-2.  xxxx
-3.  xxxx
-
-#### 参与贡献
-
-1.  Fork 本仓库
-2.  新建 Feat_xxx 分支
-3.  提交代码
-4.  新建 Pull Request
+### 新冠数据报告&可视化
 
 
-#### 特技
 
-1.  使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
-2.  Gitee 官方博客 [blog.gitee.com](https://blog.gitee.com)
-3.  你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解 Gitee 上的优秀开源项目
-4.  [GVP](https://gitee.com/gvp) 全称是 Gitee 最有价值开源项目，是综合评定出的优秀开源项目
-5.  Gitee 官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
-6.  Gitee 封面人物是一档用来展示 Gitee 会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
+#### 安装
+
+```
+pip install my-covid-report==1.0
+```
+
+#### 说明
+
+随着奥密克戎的爆发，中国上海沦陷。
+
+此pkg根据JHU CSSE所提供的官方新冠数据对疫情情况生成数据报告并可视化。
+
+#### 模块
+
+- getdata
+- data_processing
+- covid_visualization
+
+#### 函数
+
+```diff
+- getdata
+    - GET_csse_covid_19_time_series()
+    - GET_csse_covid_19_daily_reports()
+
+- data_processing
+    - ts_process_CHINA(ts_data)
+    - ts_process_US(ts_data, death = False)
+    - daily_process(daily_data, country = 'China')
+
+
+- covid_visualization
+    - Decompose(ts_data_processed,    # 时间序列数据（中国 / 美国）
+              latest_data_processed,  # 最新横截面数据（中国 / 美国）
+              prev_data_processed,    # 前一天横截面数据（中国 / 美国）
+              start=None,             # 统计开始日期
+              end=None,               # 统计结束日期
+              ma = [7,30],            # 移动平均线
+              method = '新增',        # 新增 或者 累计
+              specify = None,         # 具体的省/州，或者输入'All'获取全国信息，如不设置此参数，绘制各省/州的对比图
+              verbose = 1,            # 可选0或者1，输出详情
+              kind = '确诊',           # 确诊 / 死亡 / 恢复，这取决于ts_data_processed使用的是什么类型的数据
+              country = '中国')        # 中国 / 美国
+```
+
+
+
