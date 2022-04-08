@@ -1,6 +1,6 @@
 # Whale-Pkg
 
-## 介绍
+## Intro
 
 Whale's playground 随便写写
 
@@ -10,13 +10,13 @@ Whale's playground 随便写写
 
 
 
-#### 安装
+#### Installation
 
 ```
 pip install my-covid-report==1.0
 ```
 
-#### 说明
+#### Instruction
 
 随着奥密克戎的爆发，中国上海沦陷。
 
@@ -26,13 +26,13 @@ pip install my-covid-report==1.0
 + ⚠️需要翻墙⚠️
 ```
 
-#### 模块
+#### Modules
 
 - getdata
 - data_processing
 - covid_visualization
 
-#### 函数
+#### Functions
 
 ```diff
 - getdata
@@ -62,7 +62,7 @@ pip install my-covid-report==1.0
               country = '中国')        # 中国 / 美国
 ```
 
-#### 实例
+#### Examples
 
 代码片段：https://gist.github.com/datoujinggzj/377f08e96056ddec3333a74cba2467e2
 
