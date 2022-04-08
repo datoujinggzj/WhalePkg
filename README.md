@@ -34,13 +34,16 @@ pip install my-covid-report==1.0
 - getdata
     - GET_csse_covid_19_time_series()
     - GET_csse_covid_19_daily_reports()
+```
 
+```diff
 + data_processing
     - ts_process_CHINA(ts_data)
     - ts_process_US(ts_data, death = False)
     - daily_process(daily_data, country = 'China')
+```
 
-
+```diff
 - covid_visualization
     - Decompose(ts_data_processed,    # 时间序列数据（中国 / 美国）
               latest_data_processed,  # 最新横截面数据（中国 / 美国）
