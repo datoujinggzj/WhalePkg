@@ -35,7 +35,7 @@ pip install my-covid-report==1.0
     - GET_csse_covid_19_time_series()
     - GET_csse_covid_19_daily_reports()
 
-- data_processing
++ data_processing
     - ts_process_CHINA(ts_data)
     - ts_process_US(ts_data, death = False)
     - daily_process(daily_data, country = 'China')
