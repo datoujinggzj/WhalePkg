@@ -12,9 +12,19 @@ Whale's playground 随便写写
 
 #### Installation
 
+
+~~pip install my-covid-report==1.0~~
+
+```diff
+- 由于会出现负增长情况（累计确诊数、死亡数降低，或者说新增确诊数、死亡数为负数！）
+- 在画图时无法做面积图，加以修正！
+
+- 在data_processing中增加clip参数
+
+pip install my-covid-report==1.2
 ```
-pip install my-covid-report==1.0
-```
+
+
 
 #### Instruction
 
@@ -36,15 +46,15 @@ pip install my-covid-report==1.0
 
 ```diff
 - getdata
-    - GET_csse_covid_19_time_series()
-    - GET_csse_covid_19_daily_reports()
+    - GET_csse_covid_19_time_series()    # 获取时序数据
+    - GET_csse_covid_19_daily_reports()  # 获取横截面数据（最新和之前一天）
 ```
 
 ```diff
 - data_processing
-    - ts_process_CHINA(ts_data)
-    - ts_process_US(ts_data, death = False)
-    - daily_process(daily_data, country = 'China')
+    - ts_process_CHINA(ts_data,clip = False)                   # 中国时序数据处理
+    - ts_process_US(ts_data, death = False,clip = False)       # 美国时序数据处理（他们的字段有区别）
+    - daily_process(daily_data, country = 'China')             # 横截面数据处理
 ```
 
 ```diff
@@ -58,8 +68,8 @@ pip install my-covid-report==1.0
               method = '新增',        # 新增 或者 累计
               specify = None,         # 具体的省/州，或者输入'All'获取全国信息，如不设置此参数，绘制各省/州的对比图
               verbose = 1,            # 可选0或者1，输出详情
-              kind = '确诊',           # 确诊 / 死亡 / 恢复，这取决于ts_data_processed使用的是什么类型的数据
-              country = '中国')        # 中国 / 美国
+              kind = '确诊',          # 确诊 / 死亡 / 恢复，这取决于ts_data_processed使用的是什么类型的数据
+              country = '中国')       # 中国 / 美国
 ```
 
 #### Examples
