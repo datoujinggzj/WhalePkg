@@ -18,8 +18,7 @@ Whale's playground 随便写写
 ```diff
 - 由于会出现负增长情况（累计确诊数、死亡数降低，或者说新增确诊数、死亡数为负数！）
 - 在画图时无法做面积图，加以修正！
-
-- 在data_processing中增加clip参数
++ 在data_processing中增加clip参数
 
 pip install my-covid-report==1.2
 ```
